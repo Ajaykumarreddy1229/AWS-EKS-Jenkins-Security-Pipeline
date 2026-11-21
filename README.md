@@ -1,4 +1,3 @@
-# AWS-EKS-Jenkins-Security-Pipeline
 # Deploying the 2048 Game on Docker and Kubernetes (AWS EKS) with Jenkins CI/CD
 
 ## GitHub Repository
@@ -36,26 +35,7 @@ deployed to Kubernetes.
 -   Deploy the application to an AWS EKS cluster.
 
 ## Architecture / Workflow
-
-The architecture below highlights the components covered by my project notes.
-<img width="1536" height="1024" alt="2048-Project" src="https://github.com/user-attachments/assets/e66d0b79-70a3-42d3-a642-602cbba686a5" />
-
-**Highlight guide:**
-
-- **Green:** Covered in my project notes — GitHub, Jenkins, SonarQube code analysis and quality gate, Docker build and Docker Hub, Trivy filesystem/image scanning, Terraform, AWS, and EKS deployment.
-- **Orange:** Partially covered — the notes include dependency installation, Docker build, and security scanning; however, the sample Jenkins pipeline does not show a separate unit-test stage.
-- **Grey:** Not shown as implemented in my notes — OWASP Dependency-Check execution in the pipeline, Prometheus, Grafana, Loki, Alertmanager, Jaeger, and Slack/Email/Teams notifications. The notes mention installing the OWASP Dependency-Check plugin, but do not include its pipeline stage.
-
-### Workflow summary
-
-1. Developer pushes application or Terraform code to GitHub.
-2. GitHub triggers Jenkins through a webhook.
-3. Jenkins checks out the source and runs SonarQube code analysis and the quality-gate check.
-4. Jenkins installs Node.js dependencies and runs a Trivy filesystem scan.
-5. Jenkins builds the Docker image, tags it, and pushes it to Docker Hub.
-6. Trivy scans the Docker image.
-7. Terraform provisions the AWS EKS infrastructure, using an S3 backend for state.
-8. Jenkins uses `kubectl` to apply the Kubernetes deployment manifest to EKS.
+<img width="1536" height="1024" alt="2048-Project" src="https://github.com/user-attachments/assets/77bca942-9578-4366-a898-c2490ec63cfe" />
 
 ## Technologies Used
 
